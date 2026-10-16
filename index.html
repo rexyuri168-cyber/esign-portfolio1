@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>你的名字 — 平面設計作品集</title>
+<meta name="description" content="平面設計師作品集：品牌識別、海報、書籍編排、包裝設計。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Noto+Serif+TC:wght@400;700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#f4f0e8; --ink:#111; --mute:#6f6a60; --line:#111; --accent:#c8102e;
+  --serif:"Playfair Display","Noto Serif TC",Georgia,serif;
+  --sans:"Inter","Noto Serif TC",system-ui,sans-serif;
+  --gut:clamp(16px,4vw,48px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.7;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.wrap{padding:0 var(--gut);max-width:1400px;margin:0 auto}
+
+/* top bar */
+.topbar{position:sticky;top:0;z-index:20;background:var(--paper);border-bottom:1px solid var(--line)}
+.topbar .wrap{display:flex;justify-content:space-between;align-items:center;height:48px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:500}
+.topbar nav{display:flex;gap:clamp(14px,3vw,32px)}
+.topbar a:hover{color:var(--accent)}
+
+/* masthead */
+.masthead{padding:clamp(28px,6vw,72px) 0 0}
+.masthead .meta{display:flex;justify-content:space-between;font-size:11px;letter-spacing:.14em;text-transform:uppercase;border-bottom:1px solid var(--line);padding-bottom:10px}
+.masthead h1{font-family:var(--serif);font-weight:900;font-size:clamp(56px,16vw,230px);line-height:.88;letter-spacing:-.03em;text-transform:uppercase;padding:clamp(16px,3vw,36px) 0 clamp(12px,2vw,24px)}
+.masthead .rule{border-top:4px double var(--line);border-bottom:1px solid var(--line);padding:10px 0;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:12px;letter-spacing:.1em;text-transform:uppercase}
+
+/* cover */
+.cover{display:grid;grid-template-columns:1.25fr 1fr;gap:var(--gut);padding:var(--gut) 0 clamp(40px,7vw,96px)}
+.cover .photo{aspect-ratio:4/5}
+.cover .text{display:flex;flex-direction:column;justify-content:space-between;gap:24px}
+.kicker{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);font-weight:600}
+.cover h2{font-family:var(--serif);font-weight:700;font-size:clamp(28px,4vw,56px);line-height:1.1;margin-top:12px}
+.cover h2 em{font-style:italic;font-weight:400}
+.cover p.lead{color:var(--mute);max-width:42ch;margin-top:18px}
+.cover .cta{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;border:1px solid var(--ink);padding:10px 20px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:500;transition:.2s}
+.btn:hover,.btn.fill{background:var(--ink);color:var(--paper)}
+.btn.fill:hover{background:var(--accent);border-color:var(--accent)}
+
+/* placeholder art */
+.ph{position:relative;width:100%;height:100%;display:flex;align-items:flex-end;padding:14px;color:#fff;font-size:11px;letter-spacing:.12em;text-transform:uppercase;overflow:hidden}
+.ph span{position:relative;z-index:1;background:rgba(0,0,0,.35);padding:3px 8px}
+.ph.a{background:linear-gradient(135deg,#c8102e 0 50%,#111 50% 100%)}
+.ph.b{background:repeating-linear-gradient(45deg,#e9d9b8 0 14px,#d9c49a 14px 28px)}
+.ph.c{background:radial-gradient(circle at 30% 35%,#f2c14e 0 22%,#1b3a4b 22% 100%)}
+.ph.d{background:linear-gradient(180deg,#2d2a26 0 60%,#c8102e 60% 100%)}
+.ph.e{background:conic-gradient(from 90deg at 50% 50%,#1b3a4b,#e9d9b8,#c8102e,#1b3a4b)}
+.ph.f{background:linear-gradient(90deg,#111 0 33%,#f4f0e8 33% 66%,#c8102e 66% 100%);color:#111}
+.photo img,.card .thumb img{width:100%;height:100%;object-fit:cover}
+
+/* section head */
+.sec-head{display:flex;justify-content:space-between;align-items:baseline;border-top:4px double var(--line);padding-top:14px;margin-bottom:28px}
+.sec-head h3{font-family:var(--serif);font-weight:900;font-size:clamp(28px,5vw,64px);line-height:1;text-transform:uppercase;letter-spacing:-.02em}
+.sec-head small{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+
+/* works grid */
+.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--gut) clamp(14px,2vw,28px)}
+.card{cursor:pointer;display:block}
+.card .thumb{overflow:hidden;background:#ddd}
+.card .thumb>*{transition:transform .5s}
+.card:hover .thumb>*{transform:scale(1.04)}
+.card .no{font-family:var(--serif);font-style:italic;color:var(--accent);font-size:14px;margin-top:10px}
+.card h4{font-family:var(--serif);font-size:clamp(20px,2.2vw,30px);line-height:1.15;font-weight:700;margin-top:2px}
+.card .tags{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);margin-top:6px}
+.c1{grid-column:span 7}.c1 .thumb{aspect-ratio:16/10}
+.c2{grid-column:span 5}.c2 .thumb{aspect-ratio:4/5}
+.c3{grid-column:span 4}.c3 .thumb{aspect-ratio:3/4}
+.c4{grid-column:span 4}.c4 .thumb{aspect-ratio:3/4}
+.c5{grid-column:span 4}.c5 .thumb{aspect-ratio:3/4}
+.c6{grid-column:span 12}.c6 .thumb{aspect-ratio:21/9}
+
+/* about */
+section{padding:clamp(40px,7vw,96px) 0 0}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:var(--gut)}
+.about .big{font-family:var(--serif);font-size:clamp(24px,3.2vw,42px);line-height:1.25;font-weight:400}
+.about .big em{color:var(--accent)}
+.about .cols{columns:2;column-gap:28px;color:#2a2926}
+.about .cols p{margin-bottom:1em}
+.about .cols p:first-child::first-letter{font-family:var(--serif);font-weight:900;font-size:3.6em;float:left;line-height:.8;padding:6px 8px 0 0}
+
+/* resume */
+.resume{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gut)}
+.resume h5{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);border-bottom:1px solid var(--line);padding-bottom:8px;margin-bottom:12px}
+.resume li{list-style:none;padding:8px 0;border-bottom:1px dotted #aaa}
+.resume li b{font-family:var(--serif);font-size:17px;display:block}
+.resume li span{color:var(--mute);font-size:13px}
+
+/* contact */
+.contact{text-align:center;padding-bottom:clamp(48px,8vw,110px)}
+.contact a.mail{display:inline-block;font-family:var(--serif);font-weight:900;font-size:clamp(26px,7vw,100px);line-height:1.05;letter-spacing:-.02em;border-bottom:4px solid var(--ink);margin:22px 0 28px;word-break:break-all}
+.contact a.mail:hover{color:var(--accent);border-color:var(--accent)}
+footer{border-top:1px solid var(--line);padding:16px 0;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+/* project overlay */
+.overlay{position:fixed;inset:0;z-index:50;background:var(--paper);overflow-y:auto;display:none}
+.overlay.open{display:block}
+.overlay .bar{position:sticky;top:0;background:var(--paper);border-bottom:1px solid var(--line);z-index:2}
+.overlay .bar .wrap{display:flex;justify-content:space-between;align-items:center;height:48px;font-size:11px;letter-spacing:.14em;text-transform:uppercase}
+.overlay button{background:none;border:0;font:inherit;letter-spacing:inherit;text-transform:inherit;cursor:pointer;color:inherit}
+.overlay button:hover{color:var(--accent)}
+.proj-head{padding:clamp(28px,5vw,64px) 0 28px;display:grid;grid-template-columns:1.4fr 1fr;gap:var(--gut);align-items:end}
+.proj-head h2{font-family:var(--serif);font-weight:900;font-size:clamp(36px,7vw,100px);line-height:.95;letter-spacing:-.02em}
+.facts{font-size:13px;border-top:1px solid var(--line)}
+.facts div{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #bbb}
+.facts div span:first-child{color:var(--mute);text-transform:uppercase;letter-spacing:.12em;font-size:11px}
+.proj-body{display:grid;grid-template-columns:1fr 2fr;gap:var(--gut);padding:20px 0 28px}
+.proj-body p{margin-bottom:1em}
+.proj-imgs{display:grid;gap:clamp(14px,2vw,28px);padding-bottom:clamp(40px,6vw,80px)}
+.proj-imgs>div{aspect-ratio:16/10;background:#ddd}
+.proj-imgs>div.tall{aspect-ratio:4/5}
+.next{border-top:4px double var(--line);padding:24px 0 60px;display:flex;justify-content:space-between;align-items:baseline}
+.next button{font-family:var(--serif);font-size:clamp(22px,4vw,48px);font-weight:700}
+
+@media(max-width:820px){
+  .cover,.about,.resume,.proj-head,.proj-body{grid-template-columns:1fr}
+  .about .cols{columns:1}
+  .c1,.c2,.c3,.c4,.c5,.c6{grid-column:span 12}
+  .c3 .thumb,.c4 .thumb,.c5 .thumb,.c2 .thumb{aspect-ratio:4/3}
+  .c6 .thumb{aspect-ratio:16/9}
+  .topbar .brand{display:none}
+}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap">
+    <a href="#top" class="brand">Portfolio / Vol. 01</a>
+    <nav>
+      <a href="#works">作品 Works</a>
+      <a href="#about">關於 About</a>
+      <a href="#resume">經歷 CV</a>
+      <a href="#contact">聯絡 Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="wrap">
+    <div class="masthead">
+      <div class="meta"><span>Graphic Design Portfolio</span><span>Vol. 01 — 2026</span><span>Taiwan</span></div>
+      <h1>你的名字</h1>
+      <div class="rule"><span>平面設計師 Graphic Designer</span><span>品牌識別 · 海報 · 編排 · 包裝</span><span>Open to work</span></div>
+    </div>
+
+    <!-- COVER -->
+    <div class="cover">
+      <div class="photo">
+        <!-- 換成封面作品：<img src="images/cover.jpg" alt="封面作品"> -->
+        <div class="ph a"><span>封面作品 Cover</span></div>
+      </div>
+      <div class="text">
+        <div>
+          <div class="kicker">本期專題 Featured</div>
+          <h2>用版面說故事，<em>讓設計替品牌開口。</em></h2>
+          <p class="lead">這裡寫 2–3 句你的設計理念與專長，例如你擅長的領域、做過的產業，以及你想加入什麼樣的團隊。</p>
+        </div>
+        <div class="cta">
+          <a class="btn fill" href="#works">看作品</a>
+          <a class="btn" href="#contact">聯絡我</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- WORKS -->
+    <section id="works" style="padding-top:0">
+      <div class="sec-head"><h3>精選作品</h3><small>Selected Works · 2024–2026</small></div>
+      <div class="grid" id="grid"></div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="sec-head"><h3>關於我</h3><small>About</small></div>
+      <div class="about">
+        <p class="big">我相信好的設計是<em>清楚的溝通</em>，不是裝飾。每個版面都該有明確的重點與節奏。</p>
+        <div class="cols">
+          <p>在這裡寫你的自我介紹：你從哪裡開始做設計、受過什麼訓練、做過哪些類型的專案。用第一人稱，語氣自然，兩三段就夠。</p>
+          <p>接著寫你的工作方式：如何與客戶或團隊溝通、怎麼處理修改、重視哪些細節。求職作品集最加分的是讓人看到你「怎麼思考」。</p>
+          <p>最後寫你正在找什麼：職位類型、希望加入的團隊或產業、可以開始的時間。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESUME -->
+    <section id="resume">
+      <div class="sec-head"><h3>經歷與技能</h3><small>Experience &amp; Skills</small></div>
+      <div class="resume">
+        <div>
+          <h5>工作經歷 Experience</h5>
+          <ul>
+            <li><b>職稱 / 公司名稱</b><span>2024 – 現在</span></li>
+            <li><b>職稱 / 公司名稱</b><span>2022 – 2024</span></li>
+          </ul>
+        </div>
+        <div>
+          <h5>學歷 Education</h5>
+          <ul>
+            <li><b>學校 / 科系</b><span>2018 – 2022</span></li>
+          </ul>
+          <h5 style="margin-top:24px">獎項 Awards</h5>
+          <ul>
+            <li><b>獎項名稱</b><span>主辦單位 · 年份</span></li>
+          </ul>
+        </div>
+        <div>
+          <h5>技能 Skills</h5>
+          <ul>
+            <li><b>軟體</b><span>Illustrator · Photoshop · InDesign · Figma</span></li>
+            <li><b>專長</b><span>品牌識別 · 字體編排 · 海報 · 包裝 · 書籍</span></li>
+            <li><b>語言</b><span>中文 · English</span></li>
+          </ul>
+        </div>
+      </div>
+      <p style="margin-top:24px"><a class="btn" href="#" id="cv">下載履歷 PDF</a></p>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact">
+      <div class="kicker">下一期 Next Issue</div>
+      <a class="mail" href="mailto:rexyuri168@gmail.com">rexyuri168@gmail.com</a>
+      <p style="color:var(--mute)">歡迎來信聊聊合作或面試機會。</p>
+    </section>
+  </div>
+</main>
+
+<footer><div class="wrap"><span>© 2026 你的名字</span><span>Graphic Design Portfolio</span></div></footer>
+
+<!-- PROJECT OVERLAY -->
+<div class="overlay" id="overlay" aria-hidden="true">
+  <div class="bar"><div class="wrap"><span id="ov-no"></span><button id="ov-close">關閉 Close ✕</button></div></div>
+  <div class="wrap" id="ov-body"></div>
+</div>
+
+<script>
+/* ============ 在這裡編輯你的作品 ============
+   imgs：放作品圖路徑（例如 "images/p1-1.jpg"）。留空陣列 [] 會顯示色塊佔位。
+   ph：佔位色塊樣式 a–f（只在沒有圖片時使用）。
+*/
+const WORKS = [
+  {id:1, cls:"c3", ph:"a", title:"更愛你了", tags:"梗圖 · 字幕設計", year:"2026", role:"編輯與字幕", client:"Personal", tools:"Photoshop",
+   desc:"在這裡寫這件作品的說明：創作動機、你做了哪些處理（例如字幕字型、位置、配色），以及想傳達的幽默感。", imgs:["images/meme-1.jpg"]},
+  {id:2, cls:"c4", ph:"c", title:"去烘乾", tags:"梗圖 · 文字排版", year:"2026", role:"編輯與排版", client:"Personal", tools:"Photoshop",
+   desc:"在這裡寫這件作品的說明：圖文配置、字體選擇與版面留白的考量。", imgs:["images/meme-2.jpg"]},
+  {id:3, cls:"c5", ph:"b", title:"專注的人", tags:"梗圖 · 影像", year:"2026", role:"編輯", client:"Personal", tools:"Photoshop",
+   desc:"在這裡寫這件作品的說明。", imgs:["images/meme-3.jpg"]},
+];
+/* ============================================ */
+
+const pad = n => String(n).padStart(2,"0");
+const grid = document.getElementById("grid");
+const ov = document.getElementById("overlay");
+const ovBody = document.getElementById("ov-body");
+const ovNo = document.getElementById("ov-no");
+
+function thumb(w){
+  return w.imgs && w.imgs[0]
+    ? `<img src="${w.imgs[0]}" alt="${w.title}" loading="lazy">`
+    : `<div class="ph ${w.ph}"><span>放作品圖</span></div>`;
+}
+
+grid.innerHTML = WORKS.map(w => `
+  <a class="card ${w.cls}" href="#work-${w.id}" data-id="${w.id}">
+    <div class="thumb">${thumb(w)}</div>
+    <div class="no">No. ${pad(w.id)}</div>
+    <h4>${w.title}</h4>
+    <div class="tags">${w.tags} · ${w.year}</div>
+  </a>`).join("");
+
+function openWork(id, push=true){
+  const i = WORKS.findIndex(w => w.id === id);
+  if(i < 0) return;
+  const w = WORKS[i], next = WORKS[(i+1) % WORKS.length];
+  const imgs = (w.imgs && w.imgs.length)
+    ? w.imgs.map(s => `<div><img src="${s}" alt="${w.title}" loading="lazy" style="width:100%;height:100%;object-fit:cover"></div>`).join("")
+    : ["", "tall", ""].map((c,k) => `<div class="${c}"><div class="ph ${["a","b","c","d","e","f"][(i+k)%6]}"><span>作品圖 ${k+1}</span></div></div>`).join("");
+  ovNo.textContent = `No. ${pad(w.id)} / ${pad(WORKS.length)}`;
+  ovBody.innerHTML = `
+    <div class="proj-head">
+      <h2>${w.title}</h2>
+      <div class="facts">
+        <div><span>年份</span><span>${w.year}</span></div>
+        <div><span>角色</span><span>${w.role}</span></div>
+        <div><span>客戶</span><span>${w.client}</span></div>
+        <div><span>工具</span><span>${w.tools}</span></div>
+      </div>
+    </div>
+    <div class="proj-body">
+      <div class="kicker">${w.tags}</div>
+      <div><p>${w.desc}</p></div>
+    </div>
+    <div class="proj-imgs">${imgs}</div>
+    <div class="next"><span class="kicker">下一件 Next</span><button data-next="${next.id}">${next.title} →</button></div>`;
+  ov.classList.add("open");
+  ov.setAttribute("aria-hidden","false");
+  ov.scrollTop = 0;
+  document.body.style.overflow = "hidden";
+  if(push && location.hash !== "#work-"+id) history.pushState(null,"","#work-"+id);
+}
+function closeWork(push=true){
+  ov.classList.remove("open");
+  ov.setAttribute("aria-hidden","true");
+  document.body.style.overflow = "";
+  if(push && location.hash.startsWith("#work-")) history.pushState(null,"","#works");
+}
+
+grid.addEventListener("click", e => {
+  const a = e.target.closest(".card"); if(!a) return;
+  e.preventDefault(); openWork(+a.dataset.id);
+});
+ovBody.addEventListener("click", e => {
+  const b = e.target.closest("[data-next]"); if(b) openWork(+b.dataset.next);
+});
+document.getElementById("ov-close").addEventListener("click", () => closeWork());
+document.addEventListener("keydown", e => { if(e.key === "Escape" && ov.classList.contains("open")) closeWork(); });
+
+function route(){
+  const m = location.hash.match(/^#work-(\d+)$/);
+  if(m) openWork(+m[1], false); else if(ov.classList.contains("open")) closeWork(false);
+}
+window.addEventListener("popstate", route);
+route();
+</script>
+</body>
+</html>
